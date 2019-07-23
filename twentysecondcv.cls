@@ -117,31 +117,28 @@
 	}
 }
 
-%Command switch: case
-\newcommand{\ifequals}[3]{\ifthenelse{\equal{#1}{#2}}{#3}{}}
-\newcommand{\case}[2]{#1 #2} % Dummy, so \renewcommand has something to overwrite...
-\newenvironment{switch}[1]{\renewcommand{\case}{\ifequals{#1}}}{}
 
-
-% Command for printing skills text with stars level identification
+% Command for printing skills text
 \newcommand\starskills[1]{ 
 	\renewcommand{\starskills}{
 		\begin{flushleft}
-			\vbox{
 			\foreach [count=\i] \x/\y in {#1}{ 
-				\begin{switch}{\y}
-        			\case{1}{\raisebox{.5ex}{\fontsize{4.5}{10}\selectfont\centering ${}^{\bigstar}$} \normalsize\x}%
-        			\case{2}{\raisebox{.5ex}{\fontsize{4.5}{10}\selectfont\centering ${}^{\bigstar \bigstar}$} \normalsize\x}%
-        			\case{3}{\raisebox{.5ex}{\fontsize{4.5}{10}\selectfont\centering ${}^{\bigstar \bigstar}_{\hspace{.7ex}\bigstar}$} \normalsize\x}%
-        			\case{4}{\raisebox{.5ex}{\fontsize{4.5}{10}\selectfont\centering ${}^{\bigstar \bigstar}_{\bigstar \bigstar}$} \normalsize\x}%
-        			\case{5}{\raisebox{.5ex}{{\fontsize{4.5}{10}\selectfont\centering ${}^{\bigstar \bigstar \bigstar}_{\hspace{.7ex}\bigstar \bigstar}$}} \normalsize\x}%
-        
-    			\end{switch}%
-			}
+				\ifthenelse{\equal{\y}{1}}{\makebox[\width]{\raisebox{.5ex}{\fontsize{4.5}{10}\selectfont\centering ${}^{\bigstar}$} \normalsize\x}}{}%
+				%
+				\ifthenelse{\equal{\y}{2}}{\makebox[\width]{\raisebox{.5ex}{\fontsize{4.5}{10}\selectfont\centering ${}^{\bigstar \bigstar}$} \normalsize\x}}{}%
+				%
+				\ifthenelse{\equal{\y}{3}}{\makebox[\width]{\raisebox{.5ex}{\fontsize{4.5}{10}\selectfont\centering ${}^{\bigstar \bigstar}_{\hspace{.7ex}\bigstar}$} \normalsize\x}}{}%
+				%
+				\ifthenelse{\equal{\y}{4}}{\makebox[\width]{\raisebox{.5ex}{\fontsize{4.5}{10}\selectfont\centering ${}^{\bigstar \bigstar}_{\bigstar \bigstar}$} \normalsize\x}}{}%
+				%
+				\ifthenelse{\equal{\y}{5}}{\makebox[\width]{\raisebox{.5ex}{{\fontsize{4.5}{10}\selectfont\centering ${}^{\bigstar \bigstar \bigstar}_{\hspace{.7ex}\bigstar \bigstar}$}} \normalsize\x}}{}%
+				%\x$ \star $\y
 			}
 		\end{flushleft}
 	}
 }
+
+
 
 %Command for languages skills
 \newcommand\languages[1]{ 
@@ -230,7 +227,7 @@
 		\skillstext
 		\starskills
 		%\scriptsize
-		%[Podstawy \hfill Ekspert]%\hfill
+		[Podstawy \hfill Ekspert]%\hfill
 		
 		%------------------
 		
