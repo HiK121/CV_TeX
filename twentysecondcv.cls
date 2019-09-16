@@ -58,8 +58,8 @@
 %	 SIDEBAR DEFINITIONS
 %----------------------------------------------------------------------------------------
 
-\setlength{\TPHorizModule}{1cm} % Left margin
-\setlength{\TPVertModule}{1cm} % Top margin
+\setlength{\TPHorizModule}{1.05cm} % Left margin
+\setlength{\TPVertModule}{0.8cm} % Top margin
 
 \newlength\imagewidth
 \newlength\imagescale
@@ -117,27 +117,67 @@
 	}
 }
 
+\newcommand\stars[1]{%
+	\ifthenelse{\equal{#1}{1}}{\makebox[\width]{\fontsize{4.5}{10}\selectfont\centering ${}^{\bigstar}$}}{}%
+	%
+	\ifthenelse{\equal{#1}{2}}{\fontsize{4.5}{10}\selectfont\centering ${}^{\bigstar \bigstar}$}{}%
+	%
+	\ifthenelse{\equal{#1}{3}}{\raisebox{.5ex}{\fontsize{4.5}{10}\selectfont\centering ${}^{\bigstar \bigstar}_{\hspace{.7ex}\bigstar}$}}{}%
+	%
+	\ifthenelse{\equal{#1}{4}}{\makebox[\width]{\raisebox{.5ex}{{\fontsize{4.5}{10}\selectfont\centering ${}^{\bigstar \bigstar}_{\bigstar \bigstar}$}}}}{}%
+	%
+	\ifthenelse{\equal{#1}{5}}{\raisebox{.5ex}{{\fontsize{4.5}{10}\selectfont\centering ${}^{\bigstar \bigstar \bigstar}_{\hspace{.7ex}\bigstar \bigstar}$}}}{}%
+	%
+}%
 
 % Command for printing skills text
-\newcommand\starskills[1]{ 
-	\renewcommand{\starskills}{
+\newcommand\startext[1]{
+	\renewcommand{\startext}{
 		\begin{flushleft}
-			\foreach [count=\i] \x/\y in {#1}{ 
-				\ifthenelse{\equal{\y}{1}}{\makebox[\width]{\raisebox{.5ex}{\fontsize{4.5}{10}\selectfont\centering ${}^{\bigstar}$} \normalsize\x}}{}%
+			\foreach [count=\i] \x/\y in {#1}{
+				\ifthenelse{\equal{\y}{1}}{\makebox[\width]{{\stars{1}}\normalsize\x}}{}%
 				%
-				\ifthenelse{\equal{\y}{2}}{\makebox[\width]{\raisebox{.5ex}{\fontsize{4.5}{10}\selectfont\centering ${}^{\bigstar \bigstar}$} \normalsize\x}}{}%
+				\ifthenelse{\equal{\y}{2}}{\makebox[\width]{{\stars{2}}\normalsize\x}}{}%
+				\ifthenelse{\equal{\y}{3}}{\makebox[\width]{{\stars{3}}\normalsize\x}}{}%
 				%
-				\ifthenelse{\equal{\y}{3}}{\makebox[\width]{\raisebox{.5ex}{\fontsize{4.5}{10}\selectfont\centering ${}^{\bigstar \bigstar}_{\hspace{.7ex}\bigstar}$} \normalsize\x}}{}%
+				\ifthenelse{\equal{\y}{4}}{\makebox[\width]{{\stars{4}}\normalsize\x}}{}%
 				%
-				\ifthenelse{\equal{\y}{4}}{\makebox[\width]{\raisebox{.5ex}{\fontsize{4.5}{10}\selectfont\centering ${}^{\bigstar \bigstar}_{\bigstar \bigstar}$} \normalsize\x}}{}%
+				\ifthenelse{\equal{\y}{5}}{\makebox[\width]{{\stars{5}}\normalsize\x}}{}%
 				%
-				\ifthenelse{\equal{\y}{5}}{\makebox[\width]{\raisebox{.5ex}{{\fontsize{4.5}{10}\selectfont\centering ${}^{\bigstar \bigstar \bigstar}_{\hspace{.7ex}\bigstar \bigstar}$}} \normalsize\x}}{}%
+				\ifthenelse{\equal{\y}{}}{\normalsize\x}{}% if there is no star value
+				\ifthenelse{\equal{\x}{_}}{\newline}{}%
+				%tutaj dodac, ze jezeli zawiera dwukropek, to wtedy nowa linia
 				%\x$ \star $\y
-			}
-		\end{flushleft}
-	}
-}
+				%\x bbb
+			}%
+		\end{flushleft}%
+	}%
+}%
 
+% % Command for printing skills text
+% \newcommand\startext[1]{ 
+	% \renewcommand{\startext}{
+		% \begin{flushleft}
+			% \foreach [count=\i] \x/\y in {#1}{ 
+				% \ifthenelse{\equal{\y}{1}}{\makebox[\width]{{\fontsize{4.5}{10}\selectfont\centering ${}^{\bigstar}$}\normalsize\x}}{}%
+				% %
+				% \ifthenelse{\equal{\y}{2}}{\makebox[\width]{{\fontsize{4.5}{10}\selectfont\centering ${}^{\bigstar \bigstar}$}\normalsize\x}}{}%
+				% %
+				% \ifthenelse{\equal{\y}{3}}{\makebox[\width]{\raisebox{.5ex}{\fontsize{4.5}{10}\selectfont\centering ${}^{\bigstar \bigstar}_{\hspace{.7ex}\bigstar}$}\normalsize\x}}{}%
+				% %
+				% \ifthenelse{\equal{\y}{4}}{\makebox[\width]{\raisebox{.5ex}{\fontsize{4.5}{10}\selectfont\centering ${}^{\bigstar \bigstar}_{\bigstar \bigstar}$}\normalsize\x}}{}%
+				% %
+				% \ifthenelse{\equal{\y}{5}}{\makebox[\width]{\raisebox{.5ex}{{\fontsize{4.5}{10}\selectfont\centering ${}^{\bigstar \bigstar \bigstar}_{\hspace{.7ex}\bigstar \bigstar}$}}\normalsize\x}}{}%
+				% %
+				% \ifthenelse{\equal{\y}{}}{\normalsize\x}{}% if there is no star value
+				% \ifthenelse{\equal{\x}{_}}{\newline}{}%
+				% %tutaj dodac, ze jezeli zawiera dwukropek, to wtedy nowa linia
+				% %\x$ \star $\y
+				% %\x bbb
+			% }
+		% \end{flushleft}
+	% }
+% }
 
 
 %Command for languages skills
@@ -200,7 +240,7 @@
 		%------------------------------------------------
 
 		\renewcommand{\arraystretch}{1.6}
-		\begin{tabular}{p{0.5cm} @{\hskip 0.5cm}p{5cm}}
+		\begin{tabular}{p{0.5cm} @{\hskip 0.5cm}p{6cm}}
 			\ifthenelse{\equal{\cvdate}{}}{}{\textsc{\Large\icon{\Heart}} & \cvdate\\}
 			%\ifthenelse{\equal{\cvaddress}{}}{}{\textsc{\Large\icon{\Letter}} & \cvaddress\\}
 			\ifthenelse{\equal{\cvnumberphone}{}}{}{\textsc{\Large\icon{\Telefon}} & \cvnumberphone\\}
@@ -225,8 +265,11 @@
 
 		%\skills
 		\skillstext
-		\starskills
+		
+		\startext
 		%\scriptsize
+		\stars{1} \hfill \stars{2} \hfill \stars{3} \hfill \stars{4} \hfill \stars{5} %
+		\normalsize\newline % \hfill 
 		[Podstawy \hfill Ekspert]%\hfill
 		
 		%------------------
@@ -291,13 +334,12 @@
 
 
  \newcommand{\twentyitem}[4]{%
-	{#1} & \begin{minipage}[t]{0.85\textwidth}{%
+	\raggedright{#1} & \begin{minipage}[t]{0.85\textwidth}{%
 		\begin{tabular*}{\textwidth}[t]{l @{\extracolsep{\fill}}l}
 			 \parbox[t]{\widthof{#2}+0.2cm}{\textbf{#2}} &
 			 \parbox[t]{\textwidth-0.2cm-\widthof{#2}}{\raggedleft\large{#3}}
 
 		 \end{tabular*}
-		%}
 		 \par % 
 		 \vspace{2pt}
 		 {#4}\vspace{0.8\parsep}%
