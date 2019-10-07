@@ -146,38 +146,12 @@
 				%
 				\ifthenelse{\equal{\y}{}}{\normalsize\x}{}% if there is no star value
 				\ifthenelse{\equal{\x}{_}}{\newline}{}%
-				%tutaj dodac, ze jezeli zawiera dwukropek, to wtedy nowa linia
-				%\x$ \star $\y
-				%\x bbb
+				%if underscore, then generate new line
 			}%
 		\end{flushleft}%
 	}%
 }%
 
-% % Command for printing skills text
-% \newcommand\startext[1]{ 
-	% \renewcommand{\startext}{
-		% \begin{flushleft}
-			% \foreach [count=\i] \x/\y in {#1}{ 
-				% \ifthenelse{\equal{\y}{1}}{\makebox[\width]{{\fontsize{4.5}{10}\selectfont\centering ${}^{\bigstar}$}\normalsize\x}}{}%
-				% %
-				% \ifthenelse{\equal{\y}{2}}{\makebox[\width]{{\fontsize{4.5}{10}\selectfont\centering ${}^{\bigstar \bigstar}$}\normalsize\x}}{}%
-				% %
-				% \ifthenelse{\equal{\y}{3}}{\makebox[\width]{\raisebox{.5ex}{\fontsize{4.5}{10}\selectfont\centering ${}^{\bigstar \bigstar}_{\hspace{.7ex}\bigstar}$}\normalsize\x}}{}%
-				% %
-				% \ifthenelse{\equal{\y}{4}}{\makebox[\width]{\raisebox{.5ex}{\fontsize{4.5}{10}\selectfont\centering ${}^{\bigstar \bigstar}_{\bigstar \bigstar}$}\normalsize\x}}{}%
-				% %
-				% \ifthenelse{\equal{\y}{5}}{\makebox[\width]{\raisebox{.5ex}{{\fontsize{4.5}{10}\selectfont\centering ${}^{\bigstar \bigstar \bigstar}_{\hspace{.7ex}\bigstar \bigstar}$}}\normalsize\x}}{}%
-				% %
-				% \ifthenelse{\equal{\y}{}}{\normalsize\x}{}% if there is no star value
-				% \ifthenelse{\equal{\x}{_}}{\newline}{}%
-				% %tutaj dodac, ze jezeli zawiera dwukropek, to wtedy nowa linia
-				% %\x$ \star $\y
-				% %\x bbb
-			% }
-		% \end{flushleft}
-	% }
-% }
 
 
 %Command for languages skills
