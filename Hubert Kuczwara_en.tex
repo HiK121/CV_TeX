@@ -1,0 +1,198 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Twenty Seconds Resume/CV
+% LaTeX Template
+% Version 1.1 (8/1/17)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Carmine Spagnuolo (cspagnuolo@unisa.it) with major modifications by 
+% Vel (vel@LaTeXTemplates.com)
+%
+% License:
+% The MIT License (see included LICENSE file)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[a4paper]{twentysecondcv_en} % a4paper for A4
+\makeatletter
+\def\blfootnote{\xdef\@thefnmark{}\@footnotetext}
+\makeatother
+
+\renewcommand{\emph}[1]{\textbf{\textit{#1}}}
+
+%----------------------------------------------------------------------------------------
+%	 PERSONAL INFORMATION
+%----------------------------------------------------------------------------------------
+
+% If you don't need one or more of the below, just remove the content leaving the command, e.g. \cvnumberphone{}
+
+\profilepic{foto.jpg} % Profile picture
+
+\cvname{Hubert Kuczwara} % Your name
+\cvjobtitle{} % Job title/career
+
+\cvdate{12th september 1989} % Date of birth
+%\cvaddress{United Kingdom} % Short address/location, use \newline if more than 1 line is required
+\cvnumberphone{(+48) 723 490 304} % Phone number
+%\cvsite{http://en.wikipedia.org} % Personal website
+\cvmail{hubert.kuczwara@gmail.com} % Email address
+\cvlinkedin{www.linkedin.com/in/hubert-kuczwara/}
+\cvgithub{www.github.com/HiK121/}
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+%
+
+
+
+ %wylaczenie dzielenia wyrazow
+%----------------------------------------------------------------------------------------
+%	 ABOUT ME
+%----------------------------------------------------------------------------------------
+
+%\aboutme{ \aboutme{}
+
+%----------------------------------------------------------------------------------------
+%	 SKILLS
+%----------------------------------------------------------------------------------------
+\hyphenpenalty=10000
+% Skill bar section, each skill must have a value between 0 an 6 (float)
+%\skills{{C++ $\bullet$ BioPython/1},{CATIA $\bullet$ DELMIA $\bullet$ Python $\bullet$ ANSI C/2},{MATLAB $\bullet$ Simulink $\bullet$ AMESim/3},{Office (Word, Excel, PowerPoint) $\bullet$ {LibreOffice} $\bullet$ Windows/5}}
+
+
+
+\startext{\textbf{Office software:} /4,_,{Office$($/4},{Word/4},{Excel/4},{Power Point$)$,}/3,{LibreOffice,}/4,Windows/4,_, 
+\textbf{Simulations:}/,_,AMESim/3,Simulink/3,DELMIA/1,_, 
+\textbf{PLC programming:}/,_, Siemens:/2, {TIA Portal (LD, FB, SCL),}/,AllenBradley:/1, {Studio5000 (LD, ST)}/,_, 
+\textbf{Script programming:}/,_,{MS Visual Studio$($}/2, {C/C++}/1, {Python$)$,}/2, Matlab/2 ,_,
+\textbf{CAD:}/,_, CATIA/2}
+
+%------------------------------------------------
+
+% Skill text section, each skill must have a value between 0 an 6
+%\skillstext{{lovely/4},{narcissistic/3}}
+
+\languages{{Polish/{Native}},{English/{B2/C1}}, {German/A1}}
+
+\certificates{ {Driving license, B category / - - -}, {SEP E1 do 1kV  / 02.2024}}
+
+%----------------------------------------------------------------------------------------
+
+\makeprofile % Print the sidebar
+\hyphenpenalty=10000  %brak dzielenia wyrazów
+%----------------------------------------------------------------------------------------
+%	 INTERESTS
+%----------------------------------------------------------------------------------------
+
+\section{Work experience}
+
+\begin{twenty} % Environment for a list with descriptions
+	\twentyitem{present- -07.2018 \newline (1~year 3~months)}{Specialist in design \newline and programming}{Primetals Technologies}{
+    \begin{itemize}
+				\item PLC Programming (\textbf{TIA Portal, Studio5000})
+				\item Testing of stations, cabinets, devices - I/O check (\textbf{TIA Portal, Studio5000})
+				\item Testing and commisioning of devices (\textbf{TIA Portal})
+			\end{itemize}
+			}
+
+	\twentyitem{09.2016- -03.2014 \newline (2 years)}{Project participant}{Wrocław University of Technology}{Project \textquotedblleft\emph{Develop innovative 	solutions for high pressure vane pumps with integrated mechatronic electric drive}\textquotedblright  commissioned by the \emph{National Center for Research and Development}
+    \begin{itemize}
+				\item Carry out simulation calculations of the load torque courses in the vane pump (\textbf{AMESim, MATLAB-Simulink})
+				\item Development of technological improvements for a vane pump designed for installation in an electric motor (\textbf{AMESim, MATLAB-Simulink})
+				\item Development of simulation model of pressure courses in experimental pump (\textbf{AMESim, MATLAB-Simulink})
+				\item Develop a simulation model of torque courses and pressure courses at steady and dynamic states (\textbf{AMESim, MATLAB-Simulink})
+				\item Preparation of the hydraulic measurements results of the motor-pump assembly (\textbf{AMESim, MATLAB-Simulink})
+			\end{itemize}}
+			
+		
+	\twentyitem{02.2015- -06.2014 \newline (8 months)}{Robotics Engineer}{RW Swiss Automation}{
+	\begin{itemize}
+				\item Offline programming of industrial robots (\textbf{DELMIA})
+				\item Process simulation (\textbf{DELMIA})
+				\item Preparation of documentation (\textbf{DELMIA,MS Office: Word, Excel, PowerPoint})
+			\end{itemize} 
+			}
+\end{twenty}
+
+
+
+
+
+%----------------------------------------------------------------------------------------
+%	 EDUCATION
+%----------------------------------------------------------------------------------------
+
+\section{Education}
+
+\begin{twenty} % Environment for a list with descriptions
+	\twentyitem{present- -10.2014}{{{Construction and} \newline {Operation   of Machines}}}{{Mechanical~ Eng.~ faculty} \\ {Wrocław University of Technology}}{\vspace{-\baselineskip}{{PhD studies}\\{\emph{thesis topic:}
+\textquotedblleft{Analyze of dynamic of vanes in positive displacement variable vane pump}\textquotedblright}}}
+	
+	\twentyitem{06.2014- -02.2012}{{Automatic and} \newline  {Robotics (MSc)}}{{Mechanical Eng. faculty} {Wrocław University of Technology}}{{\emph{specialization:} Automation of Machines and Working 	Processes}\\{\emph{thesis topic:}
+\textquotedblleft{The design of control system for the mechatronic fluid power pump}\textquotedblright}}
+	
+	\twentyitem{01.2012- -10.2008}{{Automatic and Robotics }(BSc)}{{Mechanical Eng. faculty} \\{Wrocław University of Technology}}{{{\emph{thesis topic:} \textquotedblleft{Development of robotic welding technology of the component of car seat}\textquotedblright}}}
+	
+		\twentyitem{05.2015-10.2010}{{Biotechnology}}{{Faculty of Chemistry}\\{Wrocław University of Technology}}{\vspace{-\baselineskip}{{unfinished BSc  thesis}\\{\emph{thesis topic:}
+\textquotedblleft{Application of BioPython package for automation of bioinformatic tasks}\textquotedblright}}}
+	%\twentyitem{<dates>}{<title>}{<location>}{<description>}
+\end{twenty}
+
+%----------------------------------------------------------------------------------------
+%	 PUBLICATIONS
+%----------------------------------------------------------------------------------------
+
+\section{Scholarships}
+
+\begin{twentyshort} % Environment for a short list with no descriptions
+	\twentyitemshort{10.2015}{\quotedblbase\emph{Entrepreneurship and Soft Skills Training Program for PhDs and Young Scientists}\textquotedblright \ {in Alberta School of Business, University of Alberta, Kanada}}
+	%\twentyitemshort{<dates>}{<title/description>}
+\end{twentyshort}
+
+
+\section{Teaching}
+
+As PhD student I acquired 495 hours of didactic, teaching students in following courses:
+	\begin{itemize}
+				\item 60 hours \quotedblbase{Hydraulic elements}\textquotedblright
+				\item 75 hours \quotedblbase{Machine devices and control }\textquotedblright  \hspace{1pt} (15h in english)
+				\item 360 hours \quotedblbase{Hydraulic drive}\textquotedblright
+			\end{itemize} 
+
+%----------------------------------------------------------------------------------------
+%	 FOOTNOTE
+%----------------------------------------------------------------------------------------
+%\blfootnote{ I hereby give consent for my personal data included in my application to be processed for the purposes of the recruitment process under the Personal Data Protection Act as of 29 August 1997, consolidated text: Journal of Laws 2016, item 922 as amended.}
+
+
+%----------------------------------------------------------------------------------------
+%	 OTHER INFORMATION
+%----------------------------------------------------------------------------------------
+
+%\section{Other information}
+
+%\subsection{Review}
+
+%----------------------------------------------------------------------------------------
+%	 SECOND PAGE EXAMPLE
+%----------------------------------------------------------------------------------------
+
+%\newpage % Start a new page
+
+%\makeprofile % Print the sidebar
+
+%\section{Other information}
+
+%\subsection{Review}
+
+%Alice 
+
+%----------------------------------------------------------------------------------------
+
+\end{document} 

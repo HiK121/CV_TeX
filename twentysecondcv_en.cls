@@ -5,8 +5,8 @@
 %----------------------------------------------------------------------------------------
 %	 REQUIRED PACKAGES
 %----------------------------------------------------------------------------------------
-%modified------------------------
-\RequirePackage[polish]{babel}
+%HiK121------------------------
+\RequirePackage[english]{babel}
 \RequirePackage[utf8]{inputenc}
 \RequirePackage{calc} %calculations (in this case to calculate width of text)
 \RequirePackage{enumitem}% enumeration package - to remove vertical spacing during enumeration
@@ -73,7 +73,7 @@
 	\settowidth{\SectionTitleLength}{\huge #1 }% Calculate the width of the section title
 	\addtolength\TotalSectionLength{-\SectionTitleLength}% Subtract the section title width from the total width
 	\addtolength\TotalSectionLength{-2.22221pt}% Modifier to remove overfull box warning
-	\vspace{6pt}% White space before the section title
+	\vspace{8pt}% Whitespace before the section title
 	{\color{black!80} \huge #1 \rule[0.15\baselineskip]{\TotalSectionLength}{1pt}}% Print the title and auto-width rule
 }
 
@@ -83,8 +83,8 @@
 \newcommand{\cvnumberphone}[1]{\renewcommand{\cvnumberphone}{#1}}
 \newcommand{\cvaddress}[1]{\renewcommand{\cvaddress}{#1}}
 \newcommand{\cvsite}[1]{\renewcommand{\cvsite}{#1}}
-\newcommand{\cvlinkedin}[1]{\renewcommand{\cvlinkedin}{#1}} %LinkedIn icon
-\newcommand{\cvgithub}[1]{\renewcommand{\cvgithub}{#1}} %GitHub icon
+\newcommand{\cvlinkedin}[1]{\renewcommand{\cvlinkedin}{#1}} %LinkedIn site
+\newcommand{\cvgithub}[1]{\renewcommand{\cvgithub}{#1}} %GitHub site
 \newcommand{\aboutme}[1]{\renewcommand{\aboutme}{#1}}
 \newcommand{\profilepic}[1]{\renewcommand{\profilepic}{#1}}
 \newcommand{\cvname}[1]{\renewcommand{\cvname}{#1}}
@@ -98,9 +98,9 @@
 	\renewcommand{\skills}{
 		\foreach [count=\i] \x/\y in {#1}{
 			\begin{tikzpicture}
-				\draw[fill=maingray,maingray] (0,0) rectangle (6,0.4);
+				\draw[fill=maingray,maingray] (0,0) rectangle (6.3,0.4);
 				\draw[fill=white,mainblue](0,0) rectangle (\y,0.4)
-				node (example-varwidth) [above right, color = black] at (0,0.4) {\begin{varwidth}{6cm}\x \end{varwidth}};
+				node (example-varwidth) [above right, color = black] at (0,0.4) {\begin{varwidth}{6.3 cm}\x \end{varwidth}};
 			\end{tikzpicture}
 		}
 	}
@@ -116,6 +116,7 @@
 		\end{flushleft}
 	}
 }
+%HiK121 -----------------
 
 \newcommand\stars[1]{%
 	\ifthenelse{\equal{#1}{1}}{\makebox[\width]{\fontsize{4.5}{10}\selectfont\centering ${}^{\bigstar}$}}{}%
@@ -149,10 +150,12 @@
 				%if underscore, then generate new line
 			}%
 		\end{flushleft}%
+		\ifthenelse{\equal{#1}{}}{}{
+		\stars{1} \hfill \stars{2} \hfill \stars{3} \hfill \stars{4} \hfill \stars{5} % \hfill
+		}%
+		
 	}%
 }%
-
-
 
 %Command for languages skills
 \newcommand\languages[1]{ 
@@ -173,11 +176,12 @@
 			\foreach [count=\i] \x/\y in {#1}{ 
 				 \x  \hfill{\y}  \par
 			}
-			\hfill ważne do \par
+			\hfill valid to \par
 		\end{flushleft}
 	}
 }
 
+%to here-----------------------
 
 %----------------------------------------------------------------------------------------
 %	 SIDEBAR LAYOUT
@@ -214,7 +218,7 @@
 		%------------------------------------------------
 
 		\renewcommand{\arraystretch}{1.6}
-		\begin{tabular}{p{0.5cm} @{\hskip 0.5cm}p{6cm}}
+		\begin{tabular}{p{0.5cm} @{\hskip 0.5cm}p{5cm}}
 			\ifthenelse{\equal{\cvdate}{}}{}{\textsc{\Large\icon{\Heart}} & \cvdate\\}
 			%\ifthenelse{\equal{\cvaddress}{}}{}{\textsc{\Large\icon{\Letter}} & \cvaddress\\}
 			\ifthenelse{\equal{\cvnumberphone}{}}{}{\textsc{\Large\icon{\Telefon}} & \cvnumberphone\\}
@@ -235,27 +239,25 @@
 
 		%------------------------------------------------
 
-		\profilesection{Umiejętności}
+		\profilesection{Skills}
 
-		%\skills
+		\skills
 		\skillstext
-		
 		\startext
-		%\scriptsize
-		\stars{1} \hfill \stars{2} \hfill \stars{3} \hfill \stars{4} \hfill \stars{5} %
-		\normalsize\newline % \hfill 
-		[Podstawy \hfill Ekspert]%\hfill
+
+		\normalsize
+		[Basics \hfill Expert]%\hfill
 		
-		%------------------
+		%HiK121------------------
 		
-		\profilesection{Języki obce}
+		\profilesection{Languages}
 		\languages
 		
-		\profilesection{Uprawnienia}
+		\profilesection{Certificates}
 		\certificates
 		
 			
-		%------------------
+		%to here--------------------------------
 			
 	\end{textblock}
 }
@@ -340,10 +342,11 @@
 	}\\
 }
 
+
 %----------------------------------------------------------------------------------------
 %	 MARGINS AND LINKS
 %----------------------------------------------------------------------------------------
 
-\RequirePackage[left=7.6cm,top=0.1cm,right=1cm,bottom=0.2cm,nohead,nofoot]{geometry}
+\RequirePackage[left=7.6cm,top=0.0cm,right=1cm,bottom=0.2cm,nohead,nofoot]{geometry}
 
 \RequirePackage{hyperref}
