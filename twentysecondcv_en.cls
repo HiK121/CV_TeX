@@ -306,19 +306,18 @@
 
 	}{%
 	\end{tabular*}
+	\vspace{-10pt}
 }
 
 
  \newcommand{\twentyitem}[4]{%
 	\raggedright{#1} & \begin{minipage}[t]{0.85\textwidth}{%
 		\begin{tabular*}{\textwidth}[t]{l @{\extracolsep{\fill}}l}
-			 \parbox[t]{\widthof{#2}+0.2cm}{\textbf{#2}} &
-			 \parbox[t]{\textwidth-0.2cm-\widthof{#2}}{\raggedleft\large{#3}}
-
+			 \parbox[t]{0.35\textwidth}{\raggedright\textbf{#2}} &
+			 \parbox[t]{0.6\textwidth}{\raggedleft\large{#3}}
 		 \end{tabular*}
 		 \par % 
-		 \vspace{2pt}
-		 {#4}\vspace{0.8\parsep}%
+		 {#4}\vspace{\parsep}%
 	 }\end{minipage}
 	 \\
  }
@@ -331,13 +330,15 @@
 
 % New environment for the small list
 \newenvironment{twentyshort}{%
-	\begin{tabular*}{\textwidth}{p{2cm} @{\extracolsep{\fill}} l}
+	\begin{tabular*}{\textwidth}[t]{p{2cm} @{\extracolsep{\fill}} l}
 }{%
 	\end{tabular*}
+	\vspace{-10pt}
 }
 
 \newcommand{\twentyitemshort}[2]{%
-	#1&\parbox[t]{0.85\textwidth}{% 
+	#1&\parbox[t]{0.85\textwidth}{%
+		\par%	
 		{#2}\vspace{\parsep}%
 	}\\
 }

@@ -9,6 +9,7 @@
 % Original author:
 % Carmine Spagnuolo (cspagnuolo@unisa.it) with major modifications by 
 % Vel (vel@LaTeXTemplates.com)
+% Modified by HiK121
 %
 % License:
 % The MIT License (see included LICENSE file)
@@ -42,16 +43,14 @@
 \cvnumberphone{(+48) 723 490 304} % Phone number
 %\cvsite{http://en.wikipedia.org} % Personal website
 \cvmail{hubert.kuczwara@gmail.com} % Email address
-\cvlinkedin{www.linkedin.com/in/hubert-kuczwara/}
-\cvgithub{www.github.com/HiK121/}
+\cvlinkedin{www.linkedin.com/in/hubert-kuczwara/} % LinkedIn webpage
+\cvgithub{www.github.com/HiK121/} % GitHub webpage
 %----------------------------------------------------------------------------------------
 
 \begin{document}
 %
 
 
-
- %wylaczenie dzielenia wyrazow
 %----------------------------------------------------------------------------------------
 %	 ABOUT ME
 %----------------------------------------------------------------------------------------
@@ -65,8 +64,10 @@
 % Skill bar section, each skill must have a value between 0 an 6 (float)
 %\skills{{C++ $\bullet$ BioPython/1},{CATIA $\bullet$ DELMIA $\bullet$ Python $\bullet$ ANSI C/2},{MATLAB $\bullet$ Simulink $\bullet$ AMESim/3},{Office (Word, Excel, PowerPoint) $\bullet$ {LibreOffice} $\bullet$ Windows/5}}
 
+% Skill text section, each skill must have a value between 0 an 6
+%\skillstext{{lovely/4},{narcissistic/3}}
 
-
+%startext must have value (if no value then left just '/' sign) from 1 to 5
 \startext{\textbf{Office software:} /4,_,{Office$($/4},{Word/4},{Excel/4},{Power Point$)$,}/3,{LibreOffice,}/4,Windows/4,_, 
 \textbf{Simulations:}/,_,AMESim/3,Simulink/3,DELMIA/1,_, 
 \textbf{PLC programming:}/,_, Siemens:/2, {TIA Portal (LD, FB, SCL),}/,AllenBradley:/1, {Studio5000 (LD, ST)}/,_, 
@@ -75,8 +76,7 @@
 
 %------------------------------------------------
 
-% Skill text section, each skill must have a value between 0 an 6
-%\skillstext{{lovely/4},{narcissistic/3}}
+
 
 \languages{{Polish/{Native}},{English/{B2/C1}}, {German/A1}}
 
@@ -85,7 +85,7 @@
 %----------------------------------------------------------------------------------------
 
 \makeprofile % Print the sidebar
-\hyphenpenalty=10000  %brak dzielenia wyrazów
+\hyphenpenalty=10000  %no word splitting
 %----------------------------------------------------------------------------------------
 %	 INTERESTS
 %----------------------------------------------------------------------------------------
@@ -93,36 +93,32 @@
 \section{Work experience}
 
 \begin{twenty} % Environment for a list with descriptions
-	\twentyitem{present- -07.2018 \newline (1~year 3~months)}{Specialist in design \newline and programming}{Primetals Technologies}{
+	\twentyitem{present- -07.2018 \newline (1~year 3~months)}{Specialist in design and programming}{Primetals Technologies}{
     \begin{itemize}
-				\item PLC Programming (\textbf{TIA Portal, Studio5000})
-				\item Testing of stations, cabinets, devices - I/O check (\textbf{TIA Portal, Studio5000})
-				\item Testing and commisioning of devices (\textbf{TIA Portal})
-			\end{itemize}
-			}
+		\item PLC Programming (\textbf{TIA Portal, Studio5000})
+		\item Testing of stations, cabinets, devices - I/O check (\textbf{TIA Portal, Studio5000})
+		\item Testing and commisioning of devices (\textbf{TIA Portal})
+	\end{itemize}
+	}
 
 	\twentyitem{09.2016- -03.2014 \newline (2 years)}{Project participant}{Wrocław University of Technology}{Project \textquotedblleft\emph{Develop innovative 	solutions for high pressure vane pumps with integrated mechatronic electric drive}\textquotedblright  commissioned by the \emph{National Center for Research and Development}
     \begin{itemize}
-				\item Carry out simulation calculations of the load torque courses in the vane pump (\textbf{AMESim, MATLAB-Simulink})
-				\item Development of technological improvements for a vane pump designed for installation in an electric motor (\textbf{AMESim, MATLAB-Simulink})
-				\item Development of simulation model of pressure courses in experimental pump (\textbf{AMESim, MATLAB-Simulink})
-				\item Develop a simulation model of torque courses and pressure courses at steady and dynamic states (\textbf{AMESim, MATLAB-Simulink})
-				\item Preparation of the hydraulic measurements results of the motor-pump assembly (\textbf{AMESim, MATLAB-Simulink})
-			\end{itemize}}
+		\item Carry out simulation calculations of the load torque courses in the vane pump (\textbf{AMESim, MATLAB-Simulink})
+		\item Development of technological improvements for a vane pump designed for installation in an electric motor (\textbf{AMESim, MATLAB-Simulink})
+		\item Development of simulation model of pressure courses in experimental pump (\textbf{AMESim, MATLAB-Simulink})
+		\item Develop a simulation model of torque courses and pressure courses at steady and dynamic states (\textbf{AMESim, MATLAB-Simulink})
+		\item Preparation of the hydraulic measurements results of the motor-pump assembly (\textbf{AMESim, MATLAB-Simulink})
+	\end{itemize}}
 			
 		
 	\twentyitem{02.2015- -06.2014 \newline (8 months)}{Robotics Engineer}{RW Swiss Automation}{
 	\begin{itemize}
-				\item Offline programming of industrial robots (\textbf{DELMIA})
-				\item Process simulation (\textbf{DELMIA})
-				\item Preparation of documentation (\textbf{DELMIA,MS Office: Word, Excel, PowerPoint})
-			\end{itemize} 
-			}
+		\item Offline programming of industrial robots (\textbf{DELMIA})
+		\item Process simulation (\textbf{DELMIA})
+		\item Preparation of documentation (\textbf{DELMIA,MS Office: Word, Excel, PowerPoint})
+	\end{itemize} 
+	}
 \end{twenty}
-
-
-
-
 
 %----------------------------------------------------------------------------------------
 %	 EDUCATION
@@ -131,8 +127,8 @@
 \section{Education}
 
 \begin{twenty} % Environment for a list with descriptions
-	\twentyitem{present- -10.2014}{{{Construction and} \newline {Operation   of Machines}}}{{Mechanical~ Eng.~ faculty} \\ {Wrocław University of Technology}}{\vspace{-\baselineskip}{{PhD studies}\\{\emph{thesis topic:}
-\textquotedblleft{Analyze of dynamic of vanes in positive displacement variable vane pump}\textquotedblright}}}
+	\twentyitem{present- -10.2014}{{{Construction and Operation   of Machines}}}{{Mechanical~ Eng.~ faculty} \\ {Wrocław University of Technology}}{PhD studies\\{\emph{thesis topic:}
+\textquotedblleft{Analyze of dynamic of vanes in positive displacement variable vane pump}\textquotedblright}}
 	
 	\twentyitem{06.2014- -02.2012}{{Automatic and} \newline  {Robotics (MSc)}}{{Mechanical Eng. faculty} {Wrocław University of Technology}}{{\emph{specialization:} Automation of Machines and Working 	Processes}\\{\emph{thesis topic:}
 \textquotedblleft{The design of control system for the mechatronic fluid power pump}\textquotedblright}}
@@ -157,13 +153,15 @@
 
 
 \section{Teaching}
-
+\parbox[t]{\textwidth}{  %parbox needed to remove spaces in itemize environment
 As PhD student I acquired 495 hours of didactic, teaching students in following courses:
-	\begin{itemize}
-				\item 60 hours \quotedblbase{Hydraulic elements}\textquotedblright
-				\item 75 hours \quotedblbase{Machine devices and control }\textquotedblright  \hspace{1pt} (15h in english)
-				\item 360 hours \quotedblbase{Hydraulic drive}\textquotedblright
-			\end{itemize} 
+	{\begin{itemize}
+		\item 60 hours \quotedblbase{Hydraulic elements}\textquotedblright
+		\item 75 hours {\quotedblbase{Machine devices and control }\textquotedblright } \hspace{1pt} (15h in english)
+		\item 360 hours \quotedblbase{Hydraulic drive}\textquotedblright
+	\end{itemize}}
+}
+
 
 %----------------------------------------------------------------------------------------
 %	 FOOTNOTE

@@ -5,7 +5,7 @@
 %----------------------------------------------------------------------------------------
 %	 REQUIRED PACKAGES
 %----------------------------------------------------------------------------------------
-%my packages------------------------
+%HiK121 packages------------------------
 \RequirePackage[polish]{babel}
 \RequirePackage[utf8]{inputenc}
 \RequirePackage{calc} %calculations (in this case to calculate width of text)
@@ -98,9 +98,9 @@
 	\renewcommand{\skills}{
 		\foreach [count=\i] \x/\y in {#1}{
 			\begin{tikzpicture}
-				\draw[fill=maingray,maingray] (0,0) rectangle (6,0.4);
+				\draw[fill=maingray,maingray] (0,0) rectangle (6.3,0.4);
 				\draw[fill=white,mainblue](0,0) rectangle (\y,0.4)
-				node (example-varwidth) [above right, color = black] at (0,0.4) {\begin{varwidth}{6cm}\x \end{varwidth}};
+				node (example-varwidth) [above right, color = black] at (0,0.4) {\begin{varwidth}{6.3cm}\x \end{varwidth}};
 			\end{tikzpicture}
 		}
 	}
@@ -240,9 +240,8 @@
 
 		\profilesection{Umiejętności}
 
-		%\skills
+		\skills
 		\skillstext
-		
 		\startext
 		%\scriptsize
 		\normalsize
@@ -306,19 +305,18 @@
 
 	}{%
 	\end{tabular*}
+	\vspace{-10pt}
 }
 
 
  \newcommand{\twentyitem}[4]{%
 	\raggedright{#1} & \begin{minipage}[t]{0.85\textwidth}{%
 		\begin{tabular*}{\textwidth}[t]{l @{\extracolsep{\fill}}l}
-			 \parbox[t]{\widthof{#2}+0.2cm}{\textbf{#2}} &
-			 \parbox[t]{\textwidth-0.2cm-\widthof{#2}}{\raggedleft\large{#3}}
-
+			 \parbox[t]{0.35\textwidth}{\raggedright\textbf{#2}} &
+			 \parbox[t]{0.6\textwidth}{\raggedleft\large{#3}}
 		 \end{tabular*}
 		 \par % 
-		 \vspace{2pt}
-		 {#4}\vspace{0.8\parsep}%
+		 {#4}\vspace{\parsep}%
 	 }\end{minipage}
 	 \\
  }
@@ -327,17 +325,17 @@
 %	 SMALL LIST ENVIRONMENT
 %----------------------------------------------------------------------------------------
 
-\setlength{\tabcolsep}{0pt}
-
 % New environment for the small list
 \newenvironment{twentyshort}{%
-	\begin{tabular*}{\textwidth}{p{2cm} @{\extracolsep{\fill}} l}
+	\begin{tabular*}{\textwidth}[t]{p{2cm} @{\extracolsep{\fill}} l}
 }{%
 	\end{tabular*}
+	\vspace{-10pt}
 }
 
 \newcommand{\twentyitemshort}[2]{%
-	#1&\parbox[t]{0.85\textwidth}{% 
+	#1&\parbox[t]{0.85\textwidth}{%
+		\par%	
 		{#2}\vspace{\parsep}%
 	}\\
 }
