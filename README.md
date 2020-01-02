@@ -9,7 +9,7 @@ This is **Alice Twentysecond resume** modified to my needs:
 
 
 
-![Resume](/images/foto.jpg)
+![Resume](/master/foto.jpg)
 
 As a source it is one-page CV design. I did not adjusted second (and further) page layout.
 
