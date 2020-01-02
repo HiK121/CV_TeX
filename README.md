@@ -7,6 +7,7 @@ This is alice twentysecond resume modified to my needs:
 - added icons for LinkedIn and GitHub wepages linking
 - added "startext" functionality allowing to show skill levels in number of stars in more freely way than "skills" or "skillstext"
 
+![Resume](https://github.com/HiK121/CV_TeX/blob/master/Hubert_Kuczwara.jpg)
 
 As a source it is one-page CV design. I did not adjusted second (and further) page layout.
 
