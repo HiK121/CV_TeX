@@ -2,11 +2,27 @@
 \LoadClass{article}
 \NeedsTeXFormat{LaTeX2e}
 
+%--------------Added multilanguage handling----------
+\newif\ifen
+\newif\ifpl
+\newif\ifde
+
+\newcommand{\en}[1]{\ifen#1\fi}
+\newcommand{\pl}[1]{\ifpl#1\fi}
+\newcommand{\de}[1]{\ifde#1\fi}
+
+%\entrue
+%\pltrue
+%\detrue
+
+
 %----------------------------------------------------------------------------------------
 %	 REQUIRED PACKAGES
 %----------------------------------------------------------------------------------------
-%HiK121 packages------------------------
-\RequirePackage[polish]{babel}
+%HiK121------------------------
+\ifen\RequirePackage[english]{babel}\fi
+\ifpl\RequirePackage[polish]{babel}\fi
+\ifde\RequirePackage[german]{babel}\fi
 \RequirePackage[utf8]{inputenc}
 \RequirePackage{calc} %calculations (in this case to calculate width of text)
 \RequirePackage{enumitem}% enumeration package - to remove vertical spacing during enumeration
@@ -35,6 +51,10 @@
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions\relax
+
+
+
+
 
 %----------------------------------------------------------------------------------------
 %	 COLOURS
@@ -73,7 +93,7 @@
 	\settowidth{\SectionTitleLength}{\huge #1 }% Calculate the width of the section title
 	\addtolength\TotalSectionLength{-\SectionTitleLength}% Subtract the section title width from the total width
 	\addtolength\TotalSectionLength{-2.22221pt}% Modifier to remove overfull box warning
-	\vspace{8pt}% White space before the section title
+	\vspace{8pt}% Whitespace before the section title
 	{\color{black!80} \huge #1 \rule[0.15\baselineskip]{\TotalSectionLength}{1pt}}% Print the title and auto-width rule
 }
 
@@ -100,7 +120,7 @@
 			\begin{tikzpicture}
 				\draw[fill=maingray,maingray] (0,0) rectangle (6.3,0.4);
 				\draw[fill=white,mainblue](0,0) rectangle (\y,0.4)
-				node (example-varwidth) [above right, color = black] at (0,0.4) {\begin{varwidth}{6.3cm}\x \end{varwidth}};
+				node (example-varwidth) [above right, color = black] at (0,0.4) {\begin{varwidth}{6.3 cm}\x \end{varwidth}};
 			\end{tikzpicture}
 		}
 	}
@@ -116,6 +136,7 @@
 		\end{flushleft}
 	}
 }
+%HiK121 -----------------
 
 \newcommand\stars[1]{%
 	\ifthenelse{\equal{#1}{1}}{\makebox[\width]{\fontsize{4.5}{10}\selectfont\centering ${}^{\bigstar}$}}{}%
@@ -150,12 +171,11 @@
 			}%
 		\end{flushleft}%
 		\ifthenelse{\equal{#1}{}}{}{
-		\stars{1} \hfill \stars{2} \hfill \stars{3} \hfill \stars{4} \hfill \stars{5} %
+		\stars{1} \hfill \stars{2} \hfill \stars{3} \hfill \stars{4} \hfill \stars{5} % 
 		}%
+		
 	}%
 }%
-
-
 
 %Command for languages skills
 \newcommand\languages[1]{ 
@@ -176,11 +196,12 @@
 			\foreach [count=\i] \x/\y in {#1}{ 
 				 \x  \hfill{\y}  \par
 			}
-			\hfill ważne do \par
+			\hfill valid to \par
 		\end{flushleft}
 	}
 }
 
+%to here-----------------------
 
 %----------------------------------------------------------------------------------------
 %	 SIDEBAR LAYOUT
@@ -217,7 +238,7 @@
 		%------------------------------------------------
 
 		\renewcommand{\arraystretch}{1.6}
-		\begin{tabular}{p{0.5cm} @{\hskip 0.5cm}p{6cm}}
+		\begin{tabular}{p{0.5cm} @{\hskip 0.5cm}p{5cm}}
 			\ifthenelse{\equal{\cvdate}{}}{}{\textsc{\Large\icon{\Heart}} & \cvdate\\}
 			%\ifthenelse{\equal{\cvaddress}{}}{}{\textsc{\Large\icon{\Letter}} & \cvaddress\\}
 			\ifthenelse{\equal{\cvnumberphone}{}}{}{\textsc{\Large\icon{\Telefon}} & \cvnumberphone\\}
@@ -229,34 +250,44 @@
 
 		%------------------------------------------------
 		
-		% \ifthenelse{\equal{\aboutme}{}}{}{
-			% \profilesection{About me}
-			% \begin{flushleft}
-				% \aboutme
-			% \end{flushleft}
-		% }
+		\ifthenelse{\equal{\aboutme}{}}{}{
+			 \ifen\profilesection{About me}\fi
+			 \ifpl\profilesection{O mnie}\fi
+			 \ifde\profilesection{Über mich}\fi
+			 \begin{flushleft}
+				 \aboutme
+			 \end{flushleft}
+		}
 
 		%------------------------------------------------
 
-		\profilesection{Umiejętności}
+		\ifen\profilesection{Skills}\fi
+        \ifpl\profilesection{Umiejętności}\fi
+        \ifde\profilesection{Kompetenzen}\fi
 
 		\skills
 		\skillstext
 		\startext
-		%\scriptsize
+
 		\normalsize
-		[Podstawy \hfill Ekspert]%\hfill
+		\ifen[Basics \hfill Expert]\fi%\hfill
+		\ifpl[Podstawy \hfill Ekspert]\fi
+		\ifde[Grundlagen \hfill Ex]\fi
 		
-		%------------------
+		%HiK121------------------
 		
-		\profilesection{Języki obce}
+		\ifen\profilesection{Languages}\fi
+		\ifpl\profilesection{Języki}\fi
+		\ifde\profilesection{Sprachen}\fi
 		\languages
 		
-		\profilesection{Uprawnienia}
+		\ifen\profilesection{Certificates}\fi
+		\ifpl\profilesection{Certyfikaty}\fi
+		\ifde\profilesection{Zertifikate}\fi
 		\certificates
 		
 			
-		%------------------
+		%to here--------------------------------
 			
 	\end{textblock}
 }
@@ -325,6 +356,8 @@
 %	 SMALL LIST ENVIRONMENT
 %----------------------------------------------------------------------------------------
 
+\setlength{\tabcolsep}{0pt}
+
 % New environment for the small list
 \newenvironment{twentyshort}{%
 	\begin{tabular*}{\textwidth}[t]{p{2cm} @{\extracolsep{\fill}} l}
@@ -340,10 +373,11 @@
 	}\\
 }
 
+
 %----------------------------------------------------------------------------------------
 %	 MARGINS AND LINKS
 %----------------------------------------------------------------------------------------
 
-\RequirePackage[left=7.6cm,top=0.1cm,right=1cm,bottom=0.2cm,nohead,nofoot]{geometry}
+\RequirePackage[left=7.6cm,top=0.0cm,right=1cm,bottom=0.2cm,nohead,nofoot]{geometry}
 
 \RequirePackage{hyperref}
