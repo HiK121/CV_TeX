@@ -23,6 +23,7 @@
 \ifen\RequirePackage[english]{babel}\fi
 \ifpl\RequirePackage[polish]{babel}\fi
 \ifde\RequirePackage[german]{babel}\fi
+\usepackage[T1]{fontenc}
 \RequirePackage[utf8]{inputenc}
 \RequirePackage{calc} %calculations (in this case to calculate width of text)
 \RequirePackage{enumitem}% enumeration package - to remove vertical spacing during enumeration
@@ -37,7 +38,7 @@
 
 
 \RequirePackage[sfdefault]{ClearSans}
-\RequirePackage[T1]{fontenc}
+
 \RequirePackage{tikz}
 \RequirePackage{xcolor}
 \RequirePackage[absolute,overlay]{textpos}
@@ -343,8 +344,8 @@
  \newcommand{\twentyitem}[4]{%
 	\raggedright{#1} & \begin{minipage}[t]{0.85\textwidth}{%
 		\begin{tabular*}{\textwidth}[t]{l @{\extracolsep{\fill}}l}
-			 \parbox[t]{0.35\textwidth}{\raggedright\textbf{#2}} &
-			 \parbox[t]{0.6\textwidth}{\raggedleft\large{#3}}
+			 \parbox[t]{0.32\textwidth}{\raggedright\textbf{#2}} &
+			 \parbox[t]{0.65\textwidth}{\raggedleft\large{#3}}
 		 \end{tabular*}
 		 \par % 
 		 {#4}\vspace{\parsep}%
