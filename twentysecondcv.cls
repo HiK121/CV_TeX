@@ -171,10 +171,12 @@
 				%if underscore, then generate new line
 			}%
 		\end{flushleft}%
+		
+		%%%%%%%%%%%%%%STARS%%%%%%%%%%%%%%%%%
 		\ifthenelse{\equal{#1}{}}{}{
 		\stars{1} \hfill \stars{2} \hfill \stars{3} \hfill \stars{4} \hfill \stars{5} % 
 		}%
-		
+		%%%%%%%%%%%%%%STARS%%%%%%%%%%%%%%%%%
 	}%
 }%
 
